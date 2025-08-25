@@ -1718,3 +1718,22 @@ section {
 @media (max-width: 640px){
   .wb-hero-overline{ font-size: .95rem; letter-spacing: .12em; }
 }
+/* === Mobile header layout: ensure CTA + burger visible and not cut === */
+@media (max-width: 768px){
+  .header{ z-index: 2000; }
+  .header-content{ gap: 10px; padding: 0 12px; min-height: 56px; }
+  .logo{ width: 140px; }
+  .logo img{ height: 40px; }
+  .header-right{ margin-left: auto; gap: 10px; }
+  .language-switcher{ display: none; } /* libera espacio */
+  .mobile-menu-toggle{ display: flex; width: 24px; height: 18px; }
+  .mobile-menu-toggle span{ height: 2px; }
+  .header .btn.btn-primary{ font-size: .85rem; padding: 8px 10px; line-height: 1; }
+}
+
+/* Extra-narrow phones */
+@media (max-width: 360px){
+  .logo{ width: 120px; }
+  .logo img{ height: 36px; }
+  .header .btn.btn-primary{ font-size: .82rem; padding: 7px 9px; }
+}
