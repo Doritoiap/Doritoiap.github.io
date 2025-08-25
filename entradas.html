@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas — Interstellar Experience | Compra entradas y packs | València</title>
+    <meta name="description" content="Compra tus entradas para Interstellar Experience. Entradas individuales, packs familiares y eventos corporativos. E-ticket con QR y disponibilidad por franjas horarias.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Entradas — Interstellar Experience | València">
+    <meta property="og:description" content="Compra tus entradas para Interstellar Experience. Entradas individuales, packs familiares y eventos corporativos.">
+    <meta property="og:image" content="assets/images/og-image-tickets.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/tickets.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo-interstellar.png" alt="Logo Interstellar Experience">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="entradas.html" class="active">Entradas</a></li>
+                        <li><a href="la-experiencia.html">La experiencia</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="educacion.html">Educación</a></li>
+                        <li><a href="empresa-b2b.html">Empresa & B2B</a></li>
+                        <li><a href="colaboradores.html">Colaboradores</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-right">
+                    <div class="language-switcher">
+                        <a href="#" class="active">ES</a>
+                        <span>/</span>
+                        <a href="en/entradas.html">EN</a>
+                    </div>
+                    
+                    <a href="entradas.html" class="btn btn-primary">Comprar entradas</a>
+                    
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero pequeño para página interna -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Entradas</span>
+            </div>
+            <h1>Comprar entradas — Interstellar Experience</h1>
+            <p class="hero-subtitle">Elige fecha, tipo de entrada y garantiza tu acceso. E-ticket con QR. Entradas desde 20 €.</p>
+        </div>
+    </section>
+
+    <!-- Selección de fecha -->
+    <section class="date-selector">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selecciona fecha y hora</h2>
+                <p>Las entradas son por franja horaria. Llega 15–20 minutos antes de la hora reservada.</p>
+            </div>
+            
+            <div class="date-picker-container">
+                <div class="calendar-container">
+                    <!-- Simulación de calendario - solo visual -->
+                    <div class="calendar-header">
+                        <button class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
+                        <h3>Agosto 2025</h3>
+                        <button class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-days">
+                        <div class="day-header">L</div>
+                        <div class="day-header">M</div>
+                        <div class="day-header">X</div>
+                        <div class="day-header">J</div>
+                        <div class="day-header">V</div>
+                        <div class="day-header">S</div>
+                        <div class="day-header">D</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="day disabled">29</div>
+                        <div class="day disabled">30</div>
+                        <div class="day disabled">31</div>
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day active">19</div>
+                        <div class="day available">20</div>
+                        <div class="day available">21</div>
+                        <div class="day available">22</div>
+                        <div class="day available">23</div>
+                        <div class="day available">24</div>
+                        <div class="day available">25</div>
+                        <div class="day available">26</div>
+                        <div class="day available">27</div>
+                        <div class="day available">28</div>
+                        <div class="day available">29</div>
+                        <div class="day available">30</div>
+                        <div class="day available">31</div>
+                        <div class="day disabled">1</div>
+                    </div>
+                </div>
+                
+                <div class="time-slot-container">
+                    <h3>Horarios disponibles para 19/08/2025</h3>
+                    <div class="time-slots">
+                        <button class="time-slot available">10:00</button>
+                        <button class="time-slot available">11:00</button>
+                        <button class="time-slot available">12:00</button>
+                        <button class="time-slot active">13:00</button>
+                        <button class="time-slot available">16:00</button>
+                        <button class="time-slot available">17:00</button>
+                        <button class="time-slot available">18:00</button>
+                        <button class="time-slot limited">19:00</button>
+                    </div>
+                    <div class="time-slot-legend">
+                        <div class="legend-item">
+                            <span class="legend-color available"></span>
+                            <span>Disponible</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color limited"></span>
+                            <span>Pocas entradas</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color sold-out"></span>
+                            <span>Agotado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de entradas -->
+    <section class="ticket-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elige tu entrada</h2>
+                <p>Selecciona el tipo de entrada que prefieras. Todas las entradas incluyen acceso a la exposición completa.</p>
+            </div>
+            
+            <div class="tickets-container">
+                <div class="ticket-grid">
+                    <!-- Entrada Individual -->
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>Entrada individual</h3>
+                            <div class="ticket-price">20 €</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-features">
+                                <li><i class="fas fa-check"></i> Acceso completo a la exposición</li>
+                                <li><i class="fas fa-check"></i> Módulos interactivos</li>
+                                <li><i class="fas fa-check"></i> Zona VR (según disponibilidad)</li>
+                            </ul>
+                            <div class="ticket-counter">
+                                <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                <div class="counter-value">0</div>
+                                <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button class="btn btn-primary ticket-add-btn">Añadir</button>
+                        </div>
+                    </div>
+
+                    <!-- Entrada Reducida -->
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>Entrada reducida</h3>
+                            <div class="ticket-price">15 €</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-features">
+                                <li><i class="fas fa-check"></i> Estudiantes, Carnet Jove, +65</li>
+                                <li><i class="fas fa-check"></i> Desempleados</li>
+                                <li><i class="fas fa-info-circle"></i> Acreditación obligatoria</li>
+                            </ul>
+                            <div class="ticket-counter">
+                                <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                <div class="counter-value">0</div>
+                                <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button class="btn btn-primary ticket-add-btn">Añadir</button>
+                        </div>
+                    </div>
+
+                    <!-- Pack Familiar -->
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>Pack familiar</h3>
+                            <div class="ticket-price">65 €</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-features">
+                                <li><i class="fas fa-check"></i> 2 adultos + 2 niños (hasta 12 años)</li>
+                                <li><i class="fas fa-check"></i> Actividades para niños</li>
+                                <li><i class="fas fa-check"></i> Material educativo</li>
+                            </ul>
+                            <div class="ticket-counter">
+                                <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                <div class="counter-value">0</div>
+                                <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button class="btn btn-primary ticket-add-btn">Añadir</button>
+                        </div>
+                    </div>
+
+                    <!-- Entrada VIP -->
+                    <div class="ticket-card featured">
+                        <div class="ticket-ribbon">Recomendado</div>
+                        <div class="ticket-header">
+                            <h3>Entrada VIP</h3>
+                            <div class="ticket-price">35 €</div>
+                        </div>
+                        <div class="ticket-content">
+                            <ul class="ticket-features">
+                                <li><i class="fas fa-check"></i> Acceso prioritario</li>
+                                <li><i class="fas fa-check"></i> Set de merchandising exclusivo</li>
+                                <li><i class="fas fa-check"></i> Fotografía oficial</li>
+                                <li><i class="fas fa-check"></i> Zona VR garantizada</li>
+                            </ul>
+                            <div class="ticket-counter">
+                                <button class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                <div class="counter-value">0</div>
+                                <button class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <button class="btn btn-primary ticket-add-btn">Añadir</button>
+                        </div>
+                    </div>
+
+                    <!-- Grupos escolares -->
+                    <div class="ticket-card wide">
+                        <div class="ticket-header">
+                            <h3>Grupos escolares (mín. 20 pax)</h3>
+                            <div class="ticket-price">12 €/alumno</div>
+                        </div>
+                        <div class="ticket-content">
+                            <div class="school-grid">
+                                <div class="school-info">
+                                    <ul class="ticket-features">
+                                        <li><i class="fas fa-check"></i> Material educativo adaptado por niveles</li>
+                                        <li><i class="fas fa-check"></i> Sesión guiada</li>
+                                        <li><i class="fas fa-check"></i> Profesor acompañante gratis (1 cada 15 alumnos)</li>
+                                    </ul>
+                                </div>
+                                <div class="school-cta">
+                                    <p>Contacta con nuestro departamento educativo para reservas escolares</p>
+                                    <button class="btn btn-secondary">Solicitar reserva</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Building A -->
+                    <div class="ticket-card b2b">
+                        <div class="ticket-header">
+                            <h3>Team building A — Experiencia + cóctel</h3>
+                            <div class="ticket-price">Desde 60 €/persona</div>
+                        </div>
+                        <div class="ticket-content">
+                            <div class="b2b-info">
+                                <ul class="ticket-features">
+                                    <li><i class="fas fa-check"></i> Reserva privada del espacio</li>
+                                    <li><i class="fas fa-check"></i> Visita guiada exclusiva</li>
+                                    <li><i class="fas fa-check"></i> Cóctel en zona privada</li>
+                                    <li><i class="fas fa-check"></i> Presupuesto personalizado según número</li>
+                                </ul>
+                                <button class="btn btn-secondary">Solicitar presupuesto</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Building B -->
+                    <div class="ticket-card b2b">
+                        <div class="ticket-header">
+                            <h3>Team building B — Experiencia + conferencia + cóctel</h3>
+                            <div class="ticket-price">Desde 80 €/persona</div>
+                        </div>
+                        <div class="ticket-content">
+                            <div class="b2b-info">
+                                <ul class="ticket-features">
+                                    <li><i class="fas fa-check"></i> Todo lo incluido en Team building A</li>
+                                    <li><i class="fas fa-check"></i> Conferencia a medida</li>
+                                    <li><i class="fas fa-check"></i> Moderador profesional</li>
+                                    <li><i class="fas fa-check"></i> Servicio de catering premium</li>
+                                </ul>
+                                <button class="btn btn-secondary">Solicitar presupuesto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carrito / Resumen -->
+                <div class="cart-summary">
+                    <div class="cart-content">
+                        <h3>Tu compra</h3>
+                        
+                        <div class="cart-items">
+                            <p class="empty-cart">Aún no has añadido entradas</p>
+                            <!-- Los items se añadirían dinámicamente -->
+                        </div>
+                        
+                        <div class="cart-totals">
+                            <div class="cart-row subtotal">
+                                <span>Subtotal</span>
+                                <span>0,00 €</span>
+                            </div>
+                            
+                            <div class="promo-code">
+                                <input type="text" placeholder="Código promocional">
+                                <button class="btn btn-outline">Aplicar</button>
+                            </div>
+                            
+                            <div class="cart-row">
+                                <span>IVA (incluido)</span>
+                                <span>0,00 €</span>
+                            </div>
+                            
+                            <div class="cart-row total">
+                                <span>Total</span>
+                                <span>0,00 €</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-checkout" disabled>Finalizar compra</button>
+                    </div>
+                    
+                    <div class="cart-info">
+                        <div class="info-item">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>E-ticket con código QR</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Llegar 15-20 minutos antes</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Política de cambios y devoluciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ compra -->
+    <section class="faq-tickets">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas frecuentes sobre las entradas</h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Puedo cambiar la fecha de mi entrada?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, puedes modificar la fecha de tu visita hasta 48 horas antes de la fecha reservada. Para ello, accede a tu área de usuario o contacta con atención al cliente proporcionando tu número de referencia.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué documentos debo presentar para la entrada reducida?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para la entrada reducida, deberás presentar en taquilla uno de los siguientes documentos: carné de estudiante en vigor, Carnet Jove, DNI (+65 años) o tarjeta de desempleo actualizada.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo recibo mis entradas?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Las entradas se envían por correo electrónico en formato PDF con código QR. Puedes presentarlas en formato digital en tu móvil o impresas. También puedes recogerlas en taquilla con tu DNI y número de referencia si seleccionaste esa opción.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Los niños menores de 3 años pagan entrada?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Los niños menores de 3 años tienen acceso gratuito, pero necesitan una entrada de cortesía que se puede solicitar en taquilla el día de la visita presentando documento acreditativo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta">
+                <a href="faq.html" class="btn btn-secondary">Ver todas las preguntas frecuentes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Interstellar Experience</h3>
+                    <p>Ciudad de las Artes y las Ciencias, València</p>
+                    <p>Lun–Dom: 10:00 – 20:00 (consultar programación especial)</p>
+                    <p>Tel: +34 96X XXX XXX</p>
+                    <p>Email: info@interstellar-experience.es</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="entradas.html">Entradas</a></li>
+                        <li><a href="la-experiencia.html">La experiencia</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="educacion.html">Educación</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="aviso-legal.html">Aviso legal</a></li>
+                        <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+                        <li><a href="politica-cookies.html">Política de cookies</a></li>
+                        <li><a href="condiciones-compra.html">Condiciones de compra</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="rsc-statement">
+                        <p>El 2% de los beneficios se destina a Aldeas Infantiles SOS.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Interstellar Experience. Todos los derechos reservados.</p>
+                <div class="footer-logos">
+                    <img src="assets/images/logos/warner-small.png" alt="Warner Bros">
+                    <img src="assets/images/logos/generalitat-small.png" alt="Generalitat Valenciana">
+                    <img src="assets/images/logos/cac-small.png" alt="Ciudad de las Artes y las Ciencias">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice">
+        <div class="container">
+            <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="politica-cookies.html">política de cookies</a>.</p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline cookie-accept">Aceptar</button>
+                <button class="btn btn-text cookie-settings">Configurar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script (puramente visual sin funcionalidad) -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
