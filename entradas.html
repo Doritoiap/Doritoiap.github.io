@@ -28,56 +28,60 @@
 <body>
     <!-- Header con navegación -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/images/logo-interstellar.png" alt="Logo Interstellar Experience">
-                    </a>
-                </div>
-                
-                <nav class="main-nav" role="navigation" aria-label="Navegación principal">
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="entradas.html">Entradas</a></li>
-                        <li><a href="la-experiencia.html">La experiencia</a></li>
-                        <li><a href="eventos.html">Eventos</a></li>
-                        <li class="nav-hide-on-medium"><a href="educacion.html">Educación</a></li>
-                        <li class="nav-hide-on-medium"><a href="empresa-b2b.html">Empresa &amp; B2B</a></li>
-                        <li class="nav-hide-on-medium"><a href="colaboradores.html">Colaboradores</a></li>
-                        <li class="nav-hide-on-medium"><a href="faq.html">FAQ</a></li>
-                        <li class="nav-more">
-                            <details>
-                                <summary>Programas</summary>
-                                <ul class="dropdown">
-                                    <li><a href="educacion.html">Educación</a></li>
-                                    <li><a href="empresa-b2b.html">Empresa &amp; B2B</a></li>
-                                    <li><a href="colaboradores.html">Colaboradores</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </nav>
-                
-                <div class="header-right">
-                    <div class="language-switcher">
-                        <a href="#" class="active">ES</a>
-                        <span>/</span>
-                        <a href="en/entradas.html">EN</a>
-                    </div>
-                    
-                    <a href="entradas.html" class="btn btn-primary">Comprar entradas</a>
-                    
-                    <div class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo-interstellar.png" alt="Logo Interstellar Experience">
+        </a>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="entradas.html">Entradas</a></li>
+          <li><a href="la-experiencia.html">La experiencia</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+
+          <!-- estos se ocultan en pantallas medianas (clase usada por CSS) -->
+          <li class="nav-hide-on-medium"><a href="educacion.html">Educación</a></li>
+          <li class="nav-hide-on-medium"><a href="empresa-b2b.html">Empresa &amp; B2B</a></li>
+          <li class="nav-hide-on-medium"><a href="colaboradores.html">Colaboradores</a></li>
+          <li class="nav-hide-on-medium"><a href="faq.html">FAQ</a></li>
+
+          <!-- Dropdown de agrupación -->
+          <li class="nav-more">
+            <details>
+              <summary>Explora</summary>
+              <ul class="dropdown">
+                <li><a href="educacion.html">Educación</a></li>
+                <li><a href="empresa-b2b.html">Empresa &amp; B2B</a></li>
+                <li><a href="colaboradores.html">Colaboradores</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div class="language-switcher" aria-label="Idioma">
+          <a href="index.html" lang="es" hreflang="es" class="active">ES</a>
+          <span>/</span>
+          <!-- en index.html -> en/index.html ; en entradas.html -> en/entradas.html -->
+          <a href="en/index.html" lang="en" hreflang="en">EN</a>
         </div>
-    </header>
+
+        <a href="entradas.html" class="btn btn-primary">Comprar entradas</a>
+
+        <div class="mobile-menu-toggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
     <!-- Hero pequeño para página interna -->
     <section class="page-hero">

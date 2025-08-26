@@ -128,4 +128,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Ajuste dinámico: medir el ancho del logo y escribirlo en la variable CSS --logo-w
+    (function setLogoWidthVar(){
+        var logoImg = document.querySelector('.logo img');
+        var logoEl = document.querySelector('.logo');
+        function applyWidth(w){
+            if(w && w > 0) document.documentElement.style.setProperty('--logo-w', Math.round(w) + 'px');
+        }
+
+        function measure(){
+            if(logoImg){
+                var rect = logoImg.getBoundingClientRect();
+                if(rect.width && rect.width > 0) return rect.width;
+            }
+            if(logoEl){
+                var rect2 = logoEl.getBoundingClientRect();
+                if(rect2.width && rect2.width > 0) return rect2.width;
+            }
+            return null;
+        }
+
+        var initial = measure();
+        if(initial) applyWidth(initial);
+
+        // Debounced resize handler
+        var to; window.addEventListener('resize', function(){
+            clearTimeout(to); to = setTimeout(function(){
+                var m = measure(); if(m) applyWidth(m);
+            }, 120);
+        });
+    })();
 });

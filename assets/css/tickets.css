@@ -1,6 +1,15 @@
-/* Estilos específicos para la página de entradas/ticketing */
+/* ===== tickets.css: estilos específicos para la página de entradas =====
+   Secciones:
+   - Page hero / breadcrumbs
+   - Date picker / calendar
+   - Time slots
+   - Tickets / ticket-cards
+   - Cart
+   - FAQ
+   - Responsive
+*/
 
-/* Hero de página interna */
+/* --- Page hero / breadcrumbs --- */
 .page-hero {
     background-color: var(--color-secondary);
     padding: 120px 0 60px;
@@ -13,13 +22,8 @@
     opacity: 0.7;
 }
 
-.breadcrumbs a {
-    color: var(--color-text);
-}
-
-.breadcrumbs a:hover {
-    color: var(--color-primary);
-}
+.breadcrumbs a { color: var(--color-text); }
+.breadcrumbs a:hover { color: var(--color-primary); }
 
 .hero-subtitle {
     max-width: 700px;
@@ -27,104 +31,20 @@
     font-size: 1.2rem;
 }
 
-/* Selector de fecha */
-.date-picker-container {
-    display: flex;
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.calendar-container {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.calendar-nav {
-    background: none;
-    border: none;
-    color: var(--color-text);
-    font-size: 1rem;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.calendar-nav:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.day-header {
-    font-weight: 600;
-    padding: 10px 0;
-    opacity: 0.7;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-}
-
-.day {
-    width: 100%;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.day:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.day.disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.day.active {
-    background-color: var(--color-primary);
-    color: var(--color-text-dark);
-    font-weight: 600;
-}
-
-.day.available {
-    position: relative;
-}
-
-.day.available::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    width: 4px;
-    height: 4px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-}
+/* --- Date picker / calendar --- */
+.date-picker-container { display: flex; gap: 40px; margin-top: 50px; }
+.calendar-container { flex: 1; background: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px; }
+.calendar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.calendar-nav { background:none; border:none; color:var(--color-text); font-size:1rem; cursor:pointer; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.calendar-nav:hover { background-color: rgba(255,255,255,0.1); }
+.calendar-days, .calendar-grid { display:grid; grid-template-columns: repeat(7,1fr); gap:5px; margin-bottom:10px; text-align:center; }
+.day-header { font-weight:600; padding:10px 0; opacity:0.7; }
+.day { width:100%; aspect-ratio:1; display:flex; align-items:center; justify-content:center; border-radius:50%; cursor:pointer; transition: all 0.2s ease; }
+.day:hover { background-color: rgba(255,255,255,0.1); }
+.day.disabled { opacity:0.3; cursor:not-allowed; }
+.day.active { background-color: var(--color-primary); color: var(--color-text-dark); font-weight:600; }
+.day.available { position:relative; }
+.day.available::after { content:''; position:absolute; bottom:5px; width:4px; height:4px; background-color:var(--color-primary); border-radius:50%; }
 
 .time-slot-container {
     flex: 1;
@@ -212,132 +132,27 @@
     background-color: #ff4d4d;
 }
 
-/* Tipos de entradas */
-.tickets-container {
-    display: flex;
-    gap: 30px;
-}
-
-.ticket-grid {
-    flex: 2;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.ticket-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-}
-
-.ticket-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.ticket-card.featured {
-    border: 2px solid var(--color-primary);
-}
-
-.ticket-card.wide {
-    grid-column: 1 / -1;
-}
-
-.ticket-card.b2b {
-    background: rgba(76, 152, 211, 0.1);
-}
-
-.ticket-ribbon {
-    position: absolute;
-    top: 50px;
-    right: -70px;
-    background-color: var(--color-primary);
-    color: var(--color-text-dark);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 5px 30px;
-    transform: rotate(45deg);
-    width: 300px;
-    text-align: center;
-}
-
-.ticket-header {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ticket-header h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-}
-
-.ticket-price {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--color-primary);
-}
-
-.ticket-content {
-    padding: 20px;
-}
-
-.ticket-features {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.ticket-features li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
-}
-
-.ticket-features li i {
-    color: var(--color-primary);
-    font-size: 0.9rem;
-}
-
-.ticket-counter {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.counter-btn {
-    width: 35px;
-    height: 35px;
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.counter-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.counter-value {
-    width: 40px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.ticket-add-btn {
-    width: 100%;
-}
+/* --- Tickets / Ticket cards --- */
+.tickets-container { display:flex; gap:30px; }
+.ticket-grid { flex:2; display:grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap:20px; }
+.ticket-card { background: rgba(255,255,255,0.05); border-radius:10px; overflow:hidden; transition: transform .3s ease, box-shadow .3s ease; position:relative; }
+.ticket-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.ticket-card.featured { border: 2px solid var(--color-primary); }
+.ticket-card.wide { grid-column: 1 / -1; }
+.ticket-card.b2b { background: rgba(76,152,211,0.1); }
+.ticket-ribbon { position:absolute; top:50px; right:-70px; background-color:var(--color-primary); color:var(--color-text-dark); font-size:.8rem; font-weight:600; padding:5px 30px; transform: rotate(45deg); width:300px; text-align:center; }
+.ticket-header { background-color: rgba(0,0,0,0.2); padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+.ticket-header h3 { font-size:1.1rem; margin-bottom:0; }
+.ticket-price { font-size:1.3rem; font-weight:700; color:var(--color-primary); }
+.ticket-content { padding:20px; }
+.ticket-features { list-style:none; margin-bottom:20px; }
+.ticket-features li { margin-bottom:10px; display:flex; align-items:center; gap:10px; font-size:.95rem; }
+.ticket-features li i { color:var(--color-primary); font-size:.9rem; }
+.ticket-counter { display:flex; align-items:center; margin-bottom:15px; }
+.counter-btn { width:35px; height:35px; background:none; border:1px solid rgba(255,255,255,0.3); border-radius:50%; color:var(--color-text); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.counter-btn:hover { background-color: rgba(255,255,255,0.1); }
+.counter-value { width:40px; text-align:center; font-weight:600; font-size:1.2rem; }
+.ticket-add-btn { width:100%; }
 
 .school-grid {
     display: flex;
@@ -366,182 +181,232 @@
     margin-bottom: 25px;
 }
 
-/* Carrito */
-.cart-summary {
-    flex: 1;
-    position: sticky;
-    top: 100px;
-    align-self: flex-start;
-}
+/* --- Cart / Checkout sidebar --- */
+.cart-summary { flex:1; position: sticky; top:100px; align-self:flex-start; }
+.cart-content { background: rgba(255,255,255,0.05); border-radius:10px; padding:25px; margin-bottom:20px; }
+.cart-content h3 { margin-bottom:20px; text-align:center; }
+.cart-items { min-height:100px; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:20px; }
+.empty-cart { text-align:center; opacity:0.7; font-style:italic; padding:30px 0; }
+.cart-row { display:flex; justify-content:space-between; margin-bottom:15px; font-size:.95rem; }
+.cart-row.total { margin-top:20px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.1); font-size:1.2rem; font-weight:700; }
+.promo-code { display:flex; gap:10px; margin:20px 0; }
+.promo-code input { flex:1; padding:10px 15px; border-radius:5px; border:1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color:var(--color-text); }
+.promo-code input:focus { outline:none; border-color:var(--color-primary); }
+.btn-checkout { width:100%; margin-top:20px; }
+.btn-checkout:disabled { background-color:#666; cursor:not-allowed; opacity:0.5; }
+.cart-info { background: rgba(76,152,211,0.1); border-radius:10px; padding:20px; }
+.info-item { display:flex; align-items:center; gap:15px; margin-bottom:15px; }
+.info-item i { color:var(--color-accent); }
 
-.cart-content {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-}
+/* --- FAQ / Accordion --- */
+.faq-accordion { margin-bottom:40px; }
+.faq-item { margin-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); }
+.faq-question { display:flex; justify-content:space-between; align-items:center; padding:15px 0; cursor:pointer; }
+.faq-question h3 { font-size:1.1rem; margin-bottom:0; }
+.faq-icon { width:24px; height:24px; border-radius:50%; background: rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; transition: all .3s ease; }
+.faq-answer { max-height:0; overflow:hidden; transition: max-height .3s ease; padding:0 20px; }
+.faq-item.active .faq-icon { transform: rotate(45deg); background-color: var(--color-primary); }
+.faq-item.active .faq-answer { max-height:200px; padding-bottom:20px; }
+.faq-cta { text-align:center; }
 
-.cart-content h3 {
-    margin-bottom: 20px;
-    text-align: center;
+/* --- Responsive tweaks --- */
+@media (max-width:1200px) { .date-picker-container { flex-direction: column; } }
+@media (max-width:991px) {
+    .tickets-container { flex-direction: column; }
+    .cart-summary { position: static; }
+    .school-grid { flex-direction: column; }
+    .modules-grid { grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:25px; }
+    .events-grid { grid-template-columns: 1fr; }
 }
+@media (max-width:768px) { .ticket-grid { grid-template-columns: 1fr; } }
 
-.cart-items {
-    min-height: 100px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 20px;
-}
+/* Ensure header/nav on tickets page matches main styles on mobile
+    (moved to EOF so it appears last in this file and controls cascade locally) */
 
-.empty-cart {
-    text-align: center;
-    opacity: 0.7;
-    font-style: italic;
-    padding: 30px 0;
-}
-
-.cart-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-}
-
-.cart-row.total {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.promo-code {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.promo-code input {
-    flex: 1;
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color-text);
-}
-
-.promo-code input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}
-
-.btn-checkout {
+/* === HEADER & NAV: Copiado de styles.css para forzar paridad visual === */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 20px;
+    z-index: 1000;
+    background: rgba(13, 17, 25, 0.85);
+    backdrop-filter: blur(24px) saturate(1.2);
+    border-bottom: 1.5px solid rgba(255,255,255,0.07);
+    box-shadow: 0 2px 16px 0 rgba(20,30,60,0.08);
+    transition: all var(--transition-medium);
 }
-
-.btn-checkout:disabled {
-    background-color: #666;
-    cursor: not-allowed;
-    opacity: 0.5;
+.header:hover {
+    background: rgba(13, 17, 25, 0.98);
 }
-
-.cart-info {
-    background: rgba(76, 152, 211, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.info-item {
+.header-content {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    min-height: 62px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+    gap: 28px;
+    flex-wrap: nowrap;
+    width: 100%;
 }
-
-.info-item i {
-    color: var(--color-accent);
+.logo {
+    width: 200px;
+    --logo-w: 200px;
+    z-index: 1001;
 }
-
-/* FAQ */
-.faq-accordion {
-    margin-bottom: 40px;
+.logo img {
+    height: 55px;
+    transition: transform var(--transition-medium);
 }
-
-.faq-item {
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.logo:hover img {
+    transform: scale(1.05);
 }
-
-.faq-question {
+.main-nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    cursor: pointer;
-}
-
-.faq-question h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-}
-
-.faq-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+}
+.main-nav ul li {
+    margin: 0 15px;
+}
+.main-nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    position: relative;
+    padding: 2px 0;
+    white-space: nowrap;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.main-nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(.4,0,.2,1);
+}
+.main-nav ul li a:hover:after,
+.main-nav ul li a.active:after {
+    width: 100%;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 20px;
+.header .btn-primary {
+    padding: 7px 16px;
+    font-size: 0.97rem;
+    min-width: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(255,157,0,0.08);
+    white-space: nowrap;
+}
+.language-switcher {
+    display: flex;
+    margin-right: 25px;
+    font-size: 0.9rem;
+}
+.language-switcher a {
+    margin: 0 5px;
+    white-space: nowrap;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.language-switcher a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    z-index: 2001;
+    touch-action: manipulation;
+}
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
 }
 
-/* Clase activar con JavaScript (solo visual para el prototipo) */
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-    background-color: var(--color-primary);
-}
+@media (max-width: 768px){
+    /* Header basic layout for small screens */
+    .header{ z-index: 2000; }
+    .header-content{ gap: 10px; padding: 0 12px; min-height: 56px; }
+    .logo{ width: 140px; --logo-w: 140px; }
+    .logo img{ height: 40px; }
+    .header-right{ margin-left: auto; gap: 10px; }
+    .language-switcher{ display: none; } /* libera espacio */
+    .mobile-menu-toggle{ display: flex; width: 24px; height: 18px; }
+    .mobile-menu-toggle span{ height: 2px; }
+    .header .btn.btn-primary{ font-size: .85rem; padding: 8px 12px; line-height: 1; }
 
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding-bottom: 20px;
-}
+    /* Main-nav behavior on mobile (matches consolidated rules in styles.css) */
+    .main-nav { display: none; }
+    .mobile-menu-toggle { display: flex; }
 
-.faq-cta {
-    text-align: center;
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    .date-picker-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 991px) {
-    .tickets-container {
-        flex-direction: column;
-    }
+    .main-nav.nav-open {
+        display: block;
+        /* use fixed so the menu can escape any centered container and span full viewport */
+        position: absolute;
+        top: 100%; /* matches mobile header height set in media queries */
+          /* center using left 50% + transform to avoid offsets from centered parent containers
+              add a small negative offset to nudge the menu left when parent containers cause an offset */
+          left: 0;
+          /* adjustable compensation: change --nav-left-comp if you need a different nudge */
     
-    .cart-summary {
-        position: static;
-    }
+    /* shift left by half the logo width to compensate when header is centered */
     
-    .school-grid {
-        flex-direction: column;
+        width: 100%; /* ensure full viewport width */
+        background: rgba(13,17,25,0.98);
+        z-index: 3000; /* above header and overlays */
+        /* respectful padding that includes notch/safe-area if present */
+        padding: 12px 0 18px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        box-sizing: border-box;
+        overflow: visible;
     }
-}
 
-@media (max-width: 768px) {
-    .ticket-grid {
-        grid-template-columns: 1fr;
+    .main-nav.nav-open .nav-list{
+        flex-direction: column;
+        align-items: stretch; /* make items fill available width */
+        gap: 8px;
+        padding: 0; /* padding moved to parent to avoid extra width */
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
+
+    .main-nav.nav-open .nav-list > li { width: 100%; box-sizing: border-box; }
+    .main-nav.nav-open .nav-list > li a { display: block; padding: 10px 14px; box-sizing: border-box; }
+
+    /* Animación visual de la hamburguesa a X */
+    .mobile-menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-more summary{
+  list-style:none; cursor:pointer; padding:6px 20px;
+  border:1px solid var(--color-border); border-radius:8px;
+  font-weight:600;
+  width: 200px;
+  
+}
+}
+.header-content{ display:flex; align-items:center; gap:28px; max-width: var(--container-width); }
+.main-nav{ flex:1 1 auto; min-width:0; }       /* el nav puede encoger sin romper */
+.header-right{ margin-left:auto; display:flex; align-items:center; gap:12px; }
+@media (max-width:1200px){
+  .nav-hide-on-medium{ display:none; }         /* oculta enlaces largos */
+  .nav-more{ display:block; }                  /* aparece el dropdown */
+  .language-switcher{ display:none; }          /* libera ancho */
 }
