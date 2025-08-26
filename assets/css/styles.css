@@ -377,6 +377,7 @@ section {
 
 .main-nav ul {
     display: flex;
+    justify-content: center; /* centra los items dentro del nav */
 }
 
 .main-nav ul li {
@@ -452,13 +453,16 @@ section {
     height: 20px;
     cursor: pointer;
     margin-left: 20px;
+    z-index: 2001; /* above header content to ensure clicks reach it */
+    touch-action: manipulation; /* improve mobile tap responsiveness */
 }
 
 .mobile-menu-toggle span {
     width: 100%;
     height: 3px;
     background-color: var(--color-text);
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
 }
 
 /* Hero mejorado */
@@ -1516,9 +1520,6 @@ section {
 }
 /* Media Queries mejoradas */
 @media (max-width: 1200px) {
-    :root {
-        --container-width: 95%;
-    }
     
     .hero-content h1 {
         font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -1577,6 +1578,31 @@ section {
     .mobile-menu-toggle {
         display: flex;
     }
+    
+    /* Mostrar menú cuando se añade la clase nav-open desde JS */
+    .main-nav.nav-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(13,17,25,0.98);
+        z-index: 1500;
+        padding: 12px 0 18px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    .main-nav.nav-open .nav-list{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 0 16px;
+    }
+
+    /* Animación visual de la hamburguesa a X */
+    .mobile-menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     
     .hero {
         height: auto;
@@ -1738,3 +1764,76 @@ section {
   .logo img{ height: 36px; }
   .header .btn.btn-primary{ font-size: .82rem; padding: 7px 9px; }
 }
+/* ——— Header: que el nav pueda ajustar sin romper el layout ——— */
+.main-nav{ flex:1 1 auto; min-width:0; }
+.main-nav .nav-list{
+    display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:nowrap; width:100%;
+}
+.main-nav .nav-list > li{ white-space:nowrap; }
+
+/* Dropdown “Más” (solo visible en medianas) */
+.nav-more{ display:block; position:relative; }
+.nav-more details{ position:relative; }
+.nav-more summary{
+  list-style:none; cursor:pointer; padding:6px 10px;
+  border:1px solid var(--color-border); border-radius:8px;
+  font-weight:600;
+}
+.nav-more summary::-webkit-details-marker{ display:none; }
+.nav-more details[open] summary{
+  background: var(--color-background-card); border-color: var(--color-primary);
+}
+.nav-more .dropdown{
+  position:absolute; top:calc(100% + 8px); right:0; z-index:1200;
+  background: rgba(13,17,25,0.97); border:1px solid var(--color-border);
+  border-radius:12px; padding:10px; min-width:220px; box-shadow: var(--shadow-large);
+  display:flex; flex-direction:column; gap:6px;
+}
+.nav-more .dropdown a{
+  display:block; padding:8px 10px; border-radius:8px;
+}
+.nav-more .dropdown a:hover{ background: rgba(255,255,255,.06); color: var(--color-primary); }
+
+/* ——— Ajustes para rangos 1024–1440 (Laptop/Laptop L) ——— */
+@media (max-width: 1200px){
+  .header-content{ gap:16px; }
+  .main-nav .nav-list{ gap:10px; }
+  .main-nav .nav-list > li a{ font-size:.95rem; padding-left:6px; padding-right:6px; }
+  .nav-hide-on-medium{ display:none; }  /* oculta enlaces secundarios */
+  .nav-more{ display:block; }           /* muestra el dropdown Más */
+  .language-switcher{ display:none; }   /* libera espacio */
+  .header-right{ gap:12px; }
+  .header .btn.btn-primary{ padding:8px 12px; font-size:.9rem; }
+}
+
+/* Afinado para 1024 exactos (algunos laptops) */
+@media (max-width: 1040px){
+  .logo{ width:160px; }
+  .logo img{ height:44px; }
+}
+
+/* Ya tenías el colapso total a móvil <=768 (hamburguesa) */
+/* ===== Header fix: 1440 / 1024 ===== */
+
+/* Estructura: que el nav ocupe el espacio flexible y el CTA no se pise */
+.header-content{ display:flex; align-items:center; gap:16px; }
+.logo{ flex:0 0 auto; }
+.main-nav{ flex:1 1 auto; min-width:0; }      /* permite que el nav encoja */
+.main-nav .nav-list{ display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:nowrap; overflow: visible; width:100%; }
+.header-right{ flex:0 0 auto; display:flex; align-items:center; gap:12px; }
+.header .btn.btn-primary{ flex-shrink:0; }    /* el CTA no se deforma */
+
+/* Hacemos aparecer el dropdown “Más” antes (hasta 1500px) y liberamos espacio */
+  .language-switcher{ display:none; }         /* gana ~120–160px */
+  .nav-hide-on-medium{ display:none; }        /* oculta enlaces largos */
+  .nav-more{ display:block; }                 /* muestra el “Más” */
+  .header .btn.btn-primary{ padding:8px 12px; font-size:.9rem; }
+
+
+/* Afinado extra para 1024–1200 */
+@media (max-width: 1200px){
+  .main-nav .nav-list{ gap:10px; }
+  .main-nav .nav-list > li a{ font-size:.95rem; padding-left:6px; padding-right:6px; }
+}
+
+/* Ya tienes el colapso total a burger en ≤768 */
